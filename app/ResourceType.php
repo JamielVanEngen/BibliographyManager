@@ -11,11 +11,11 @@ class ResourceType extends Model
 
     public function citationStyle()
     {
-        return $this->belongsTo('App\CitationStyle', 'foreign_key', 'citation_style_id');
+        return $this->belongsTo('App\CitationStyle', 'citation_style_id');
     }
 
-    public function ResourceComponent()
+    public function resourceComponent()
     {
-        return $this->hasMany('App\ResourceComponent', 'foreign_key', 'resource_type_id');
+        return $this->hasMany('App\ResourceComponent', 'resource_type_id');
     }
 }

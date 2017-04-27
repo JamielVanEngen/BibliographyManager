@@ -9,8 +9,8 @@ class ResourceComponent extends Model
     protected $table = "resource_components";
     public $timestamps = false;
 
-    public function user()
+    public function resourceType()
     {
-        return $this->belongsTo('App\ResourceType', 'foreign_key', 'resource_type_id');
+        return $this->belongsTo('App\ResourceType', 'resource_type_id');
     }
 }

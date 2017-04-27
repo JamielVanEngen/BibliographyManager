@@ -14,8 +14,8 @@ class CitationStyle extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function ResourceType()
+    public function resourceType()
     {
-        return $this->hasMany('App\ResourceType', 'foreign_key', 'citation_style_id');
+        return $this->hasMany('App\ResourceType', 'citation_style_id');
     }
 }
