@@ -12,9 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/citationstyles', 'CitationStyleController@index');
+Route::get('/citationstyles/create', 'CitationStyleController@create');
+Route::get('/citationstyles/{photo}/edit', 'CitationStyleController@edit');
+Route::get('/resourcetypes', 'ResourceTypeController@index');
+Route::get('/resourcetypes/create', 'ResourceTypeController@create');
+Route::get('/resourcetypes/{photo}/edit', 'ResourceTypeController@edit');
