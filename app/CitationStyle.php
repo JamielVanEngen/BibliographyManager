@@ -6,5 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class CitationStyle extends Model
 {
-    //
+    protected $table = "citation_styles";
+    public $timestamps = false;
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function ResourceType()
+    {
+        return $this->hasMany('App\ResourceType', 'foreign_key', 'citation_style_id');
+    }
 }

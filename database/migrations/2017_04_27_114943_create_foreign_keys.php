@@ -19,17 +19,11 @@ class CreateForeignKeys extends Migration
         });
 
         Schema::table('resource_types', function ($t) {
-            $t->foreign('user_id')
-              ->references('id')->on('users');
-
             $t->foreign('citation_style_id')
                 ->references('id')->on('citation_styles');
         });
 
         Schema::table('resource_components', function ($t) {
-            $t->foreign('user_id')
-              ->references('id')->on('users');
-
             $t->foreign('resource_type_id')
                 ->references('id')->on('resource_types');
         });
@@ -43,7 +37,7 @@ class CreateForeignKeys extends Migration
     public function down()
     {
         dropForeignKeysByName('citation_styles', ['user_id']);
-        dropForeignKeysByName('resource_types', ['user_id', 'citation_style_id']);
-        dropForeignKeysByName('resource_components', ['user_id', 'resource_type_id']);
+        dropForeignKeysByName('resource_types', ['citation_style_id']);
+        dropForeignKeysByName('resource_components', ['resource_type_id']);
     }
 }
