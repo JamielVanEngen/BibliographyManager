@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\CitationStyle;
 
 class CitationStyleController extends Controller
 {
   public function index()
   {
-    return view('citationstyles.index');
+      $styles = CitationStyle::all();
+      return view('citationstyles.index', compact('styles'));
   }
 
   public function create()
