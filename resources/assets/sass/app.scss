@@ -7,3 +7,14 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.option-dropdown {
+    float: right;
+    color: grey;
+}
+
+
+.citation-style-list-item:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}

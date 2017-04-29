@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/citationstyles', 'CitationStyleController@index');
-Route::get('/citationstyles/create', 'CitationStyleController@create');
+Route::post('/citationstyles/store', 'CitationStyleController@store');
 Route::get('/citationstyles/{id}/edit', 'CitationStyleController@edit');
 Route::get('/resourcetypes', 'ResourceTypeController@index');
 Route::get('/resourcetypes/create', 'ResourceTypeController@create');
@@ -29,4 +29,4 @@ Route::get('/resourcetypes/{id}/edit', 'ResourceTypeController@edit');
 Route::get('/resourcetypes/{id}',function($id){
     $types = ResourceType::where('citation_style_id', '=', $id)->get();
     return Response::json($types);
-});
+})->middleware('auth');
