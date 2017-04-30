@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/citationstyles', 'CitationStyleController@index');
+Route::get('/citationstyles/alternate', 'CitationStyleController@alternateIndex');
 Route::post('/citationstyles/store', 'CitationStyleController@store');
 Route::get('/citationstyles/{id}/edit', 'CitationStyleController@edit');
 Route::get('/resourcetypes', 'ResourceTypeController@index');

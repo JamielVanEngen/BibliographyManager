@@ -20,6 +20,12 @@ class CitationStyleController extends Controller
       return view('citationstyles.index', compact('styles'));
     }
 
+    public function alternateIndex()
+    {
+      $styles = CitationStyle::all();
+      return view('citationstyles.alternateIndex', compact('styles'));
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

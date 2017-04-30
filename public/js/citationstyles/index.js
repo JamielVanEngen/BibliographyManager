@@ -7,17 +7,17 @@ $(document).ready(function() {
         }
         var id = $(this).attr("data-id");
         $.get('/resourcetypes/' + id, function (data) {
-            $("#resource-types-list").empty();
+            $(".resource-types-list").empty();
             if (data.length !== 0) {
                 for(var i = 0; i < data.length; i++) {
                     var resourceType = $("<a class='resource-types-list-item list-group-item' data-id='" + data[i]["id"] + "'>" + data[i]["name"] + "</a>").hide();
 
-                    $("#resource-types-list").append(resourceType);
+                    $(this).find(".resource-types-list").append(resourceType);
                     resourceType.fadeIn('normal');
                 }
             }
             else {
-                $("#resource-types-list").append("<p>No resource types found!</p>");
+                $(this).find(".resource-types-list").append("<p>No resource types found!</p>");
             }
         })
     });
